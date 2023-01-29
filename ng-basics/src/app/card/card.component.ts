@@ -7,16 +7,19 @@ import { ICard } from '../app.component';
 })
 export class CardComponent implements OnInit {
   @Input() card!: ICard;
+  @Input() index!: number;
 
   title = 'My Card Title';
   text = 'My sample text';
   textColor = 'string';
 
+  cardDate: Date = new Date();
+
   ngOnInit(): void {
 
   }
   changeTitle() {
-    this.title = 'Title has been changed!'
+    this.card.title = 'Title has been changed!'
   }
   inputHandler(value: any) {
     // const value = event.target.value;

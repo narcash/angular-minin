@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CardComponent } from './card/card.component';
 
 export interface ICard {
   title: string;
@@ -9,6 +10,7 @@ export interface ICard {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
   title = 'ng-basics';
   toggle = true;

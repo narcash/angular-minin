@@ -5,7 +5,8 @@
       fontWeight: card.title.length < 7 ? 'normal' : 'bold'
     }"
   >
-    {{ title }}
+    {{ index }}
+    {{ card.title }}
   </h2>
   <!-- <p
     class="text"
@@ -23,23 +24,25 @@
     [class.red]="textColor === 'red'"
     [class.green]="textColor === 'green'"
   >
-    {{ text }}
+    {{ card.text }}
   </p>
   <div class="buttons">
     <button (click)="textColor = 'blue'">Set Blue</button>
     <button (click)="textColor = 'green'">Set Green</button>
     <button (click)="textColor = 'red'">Set Red</button>
   </div>
-
-  <!-- <div>
+  <div class="buttons">
+    <button (click)="(changeTitle)">Change Title</button>
+    <button (click)="card.title = 'Inline title'">Change title inline</button>
+  </div>
+  <div>
+    <strong>{{ cardDate | date }}</strong>
+  </div>
+  <div>
     <input
       type="text"
-      #myInput
-      (input)="inputHandler(myInput.value)"
-      [value]="title"
+      [(ngModel)]="card.title"
+      (ngModelChange)="changeHandler()"
     />
-  </div> -->
-  <div>
-    <input type="text" [(ngModel)]="title" (ngModelChange)="changeHandler()" />
   </div>
 </div>

@@ -5,7 +5,11 @@
   <hr />
   <!-- <app-form></app-form> -->
   <div *ngIf="toggle; else noCards">
-    <app-card *ngFor="let iterCard of cards" [card]="iterCard"></app-card>
+    <app-card
+      *ngFor="let iterCard of cards; let idx = index"
+      [card]="iterCard"
+      [index]="idx + 1"
+    ></app-card>
   </div>
 
   <ng-template #noCards>
