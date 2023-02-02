@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 export interface ICard {
+
   title: string;
   text: string;
 }
